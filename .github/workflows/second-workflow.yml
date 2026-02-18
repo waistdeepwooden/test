@@ -9,8 +9,8 @@ jobs:
   download-test-artifact:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Download artifact'
-        uses: actions/download-artifact@v5
+      - name: Download artifact
+        uses: actions/download-artifact@v7
         with:
           run-id: '${{ github.event.workflow_run.id }}'
 

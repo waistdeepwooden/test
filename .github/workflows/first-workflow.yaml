@@ -15,16 +15,7 @@ jobs:
           mkdir -p ./pr
           echo $PR_NUMBER > ./pr/pr_number.txt
 
-      - name: Verify file
-        run: ls ./pr
-
-      - name: Verify dir
-        run: ls
-
-      - name: Verify run id
-        run: echo ${{ github.run_id }}
-
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: validation-reports-metadata
           path: ./pr/pr_number.txt
