@@ -10,6 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
+        uses: actions/download-artifact@v7
+        with:
+          run-id: '${{ github.event.workflow_run.id }}'
+          repository: '${{ github.repository }}'
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          name: validation-reports-metadata
+
+      - name: Check artifact
         uses: actions/github-script@v8
         with:
           script: |
