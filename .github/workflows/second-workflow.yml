@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Verify run id
-        run: echo ${{ github.event.workflow_run.workflow_id }}
+        run: echo ${{ github.event }}
 
       - name: 'Download artifact'
         uses: actions/download-artifact@v5
