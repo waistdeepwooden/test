@@ -34,7 +34,6 @@ jobs:
             const prNumberPath = './pr/pr_number.txt';
             const issue_number = Number(fs.readFileSync(prNumberPath, 'utf8').toString().trim());
             await github.rest.issues.createComment({
-              owner: '${{ github.repository_owner }}',
               repo: '${{ github.repository }}',
               issue_number,
               body: 'Thank you for the PR!'
