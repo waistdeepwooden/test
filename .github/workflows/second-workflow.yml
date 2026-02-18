@@ -10,14 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Verify run id
-        run: echo ${{ github.event.workflow_run.workflow_id }}
+        run: echo ${{ github.event.workflow_run.id }}
 
       - name: 'Download artifact'
         uses: actions/download-artifact@v5
-        with:
-#          run-id: '${{ github.event.workflow_run.workflow_id }}'
-#          name: validation-reports-metadata
-          path: ./pr
 
       - name: Verify file
         run: ls ./pr
