@@ -13,10 +13,13 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           run-id: '${{ github.event.workflow_run.workflow_id }}'
-          name: pr_number
-          path: pr
+          name: validation-reports-metadata
+          path: ./pr
 
-      - name: 'Check the artifact'
+      - name: Verify file
+        run: ls ./pr
+
+      - name: Verify dir
         run: ls
 
       - name: 'Comment on PR'
