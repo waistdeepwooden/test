@@ -35,4 +35,4 @@ jobs:
         run: |
           gh pr comment ${{ steps.set_pr_number.outputs.pr_number }} --body "Your comment text here"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
