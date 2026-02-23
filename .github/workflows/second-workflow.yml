@@ -24,9 +24,6 @@ jobs:
       - name: Verify dir
         run: ls
 
-      - name: Record pr number
-        run: cat /tmp/pr_number.txt >>
-
       - name: Set PR number output
         id: set_pr_number
         run: echo "pr_number=$(cat /tmp/pr_number.txt)" >> "$GITHUB_OUTPUT"
