@@ -4,6 +4,8 @@ on:
     workflows: [ "first-workflow" ]
     types:
       - completed
+permissions:
+  pull-requests: write
 
 jobs:
   download-test-artifact:
