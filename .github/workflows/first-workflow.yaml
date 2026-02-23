@@ -11,14 +11,12 @@ jobs:
       - name: Save PR number
         env:
           PR_NUMBER: ${{ github.event.number }}
-        run: |
-          mkdir -p /pr
-          echo $PR_NUMBER > ./pr/pr_number.txt
+        run: echo $PR_NUMBER > /tmp/pr_number.txt
 
       - name: Debug
         run: ls
 
       - uses: actions/upload-artifact@v6
         with:
-          name: validation-reports-metadata
-          path: /pr/pr_number.txt
+          name: metadata
+          path: /tmp/pr_number.txt
